@@ -16,10 +16,10 @@ The Budget Organizer
 To get this work in your system:
 --------------------------------
 
-  * Get Python 3.9.7 or recent versions [refer https://www.python.org/downloads/]
+  * Get Python 3.9.7 or recent versions [refer here](https://www.python.org/downloads/)
   * Have a code editor [Visual Studio code or Pycharm or any..]
-  * Set up a virtual environment and install Django 3.2.8 or recent versions [Documentation Site : https://www.djangoproject.com/ ]
-  * Get MySQL and create a database [refer https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/]
+  * Set up a virtual environment and install Django 3.2.8 or recent versions [refer Documentation Site](https://www.djangoproject.com/)
+  * Get MySQL and create a database [refer here](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
   * Get the code and connect the database to your django project
   * Here you go! type the command in the terminal to run the server in your browser
 ```
