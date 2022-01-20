@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Income</title>
+    <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+        color: black;
+        font-family:"Consolas", serif;
+        font-size: 20px;
+        margin:0;
+      }
+      input{
+          border: 1px solid black;
+          padding: 6px;
+          border-radius: 7px;
+          margin-top: 50px;
+          color:black;
+      }
+      input[type=button]:hover{
+          background-color: black;
+          border: 1px solid white;
+      }
+      input[type=button]{
+          background-color:dimgray;
+          text-align: center;
+          color: white;
+          border: 1px solid dimgray;
+          margin: 7px;
+          float:right;
+      }
+      
+      .header {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          background: #000;
+          position: sticky;
+          top: 0;
+          overflow: hidden;
+        }
+        
+        #shining {
+          font-weight: 700;
+          text-align: center;
+          font-size: 40px;
+          font-family: cursive, sans-serif;
+          text-transform: uppercase;
+          background: linear-gradient(90deg, #000, #fff, #000);
+          letter-spacing: 5px;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-repeat: no-repeat;
+          background-size: 80%;
+          animation: shine 5s linear infinite;
+          position: relative;
+        }
+        
+        @keyframes shine {
+          0% {
+            background-position-x: -500%;
+          }
+          100% {
+            background-position-x: 500%;
+          }
+        }
+        a:hover{
+            font-weight:bold;
+            border: 1px solid black;
+        }
+        a{
+            text-decoration: none;
+            padding: 14px 16px;
+            margin: 10px;
+            font-weight:normal;
+            color: black;
+            border: none;
+        }
+
+</style>
+<body>
+    {% block content %}
+    <div class="header">
+        <p id="shining">Income <i class="fa fa-hand-holding-usd" aria-hidden="true" fa-3x></i></p>
+    </div>
+    <form action="{% url 'create' %}" method="POST" style=" margin: 50px 400px 50px 500px;">
+        {% csrf_token %}
+        Source of income <input type="text" name="source"><br>
+        Amount              <input type="number" name="amount"><br>
+        Date of income       <input type="date" name="date"><br>
+        <input type="submit" value="Submit" style="background-color: skyblue;padding: 14px 16px; font-size:17px; font-family:'Consolas',sans-serif;" ><br>
+    </form>
+    <a href="{% url 'select' %}" style="background-color: skyblue; text-decoration:none;padding: 14px 16px; margin-left: 500px;"><i class="fa fa-list" aria-hidden="true" fa-3x></i> View income list</a> 
+    {% endblock %}
+</body>
+</html>

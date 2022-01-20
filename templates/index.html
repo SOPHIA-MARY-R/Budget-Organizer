@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+  
+  #shining {
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: cursive, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
+
+.navbar{
+    top: 0; 
+    /*background-color:rgba(54, 59, 58, 0.95);*/
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    position: sticky;
+    width: 100%;
+    overflow: hidden;
+}
+.navbar a:hover{
+    background-color: deeppink;
+}
+.navbar a{
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    float: right;
+    /*border: 1px solid white;*/
+}
+.footer{
+    position: fixed;
+    bottom: 0; 
+    background-color:black;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+.footer a:hover{
+    background-color: deeppink;
+}
+.footer a{
+    text-decoration: none;
+    padding: 14px 16px;
+    display:block;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    
+}
+#about{
+    margin: 40px 40px 40px 40px;
+    text-align:justify;
+    clear: right;
+}
+body{
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+    color: white;
+    font-family:"Consolas", serif;
+    margin: 0px;
+    font-size: 20px;
+}
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  /*background-image: linear-gradient(to bottom right, lightpink, white);*/
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+:root {
+  --bg-color: hsl(49 37% 94%);
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 24;
+}
+
+
+h1 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+  color:black;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h1::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  color:black;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+<body>
+  {% block content %}
+  {% if user.is_authenticated %}
+    <div class="header">
+    <p id="shining">Budget Organizer! <i class="fa fa-smile-wink" aria-hidden="true" fa-3x></i></p>
+    </div>
+    <div class="navbar">
+        <a style="float:left; background-color: deeppink;" href="#Home"><i class="fa fa-home" aria-hidden="true" fa-2x></i> Home</a>
+        <a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true" fa-2x></i> SignOut</a>
+        <a href="{% url 'chart' %}" target="_blank"><i class="fa fa-bar-chart" aria-hidden="true" fa-2x></i> Charts</a>
+        <a href="{% url 'ecreate' %}" target="_blank"><i class="fa fa-money-bill-wave" fa-2x></i> Expenses</a>
+        <a href="{% url 'create' %}" target="_blank"><i class="fa fa-hand-holding-usd" fa-2x></i> Income</a>
+        
+      
+    </div>
+    <br><br>
+    <div style="margin: 50px 200px 20px 200px; color:black">
+      <pre>
+      <h1>Hello, {{user.username}}!</h1>
+      </pre>
+  <p class="subtitle">Welcome back!</p>
+    </div>
+    <div class="slideshow-container" style="color:black; font-size:20px">
+
+  
+      <div class="mySlides">
+        <p><i class="fa fa-hand-holding-usd" style="font-size: 35px; font-weight: bold" ></i></p>
+        <p>1) Fill your income details.</p>
+      </div>
+      
+      <div class="mySlides">
+        <p><i class="fas fa-money-bill-wave" style="font-size: 35px; font-weight: bold" ></i></p>
+        <p>2) Fill your expense details.</p>
+      </div>
+      
+      <div class="mySlides">
+        <p><i class="fa fa-bar-chart" style="font-size: 35px; font-weight: bold" ></i></p>
+        <p>3) View your saving trend.</p>
+      </div>
+  
+      <div class="mySlides">
+        <p><i class="fa fa-bell" style="font-size: 35px; font-weight: bold" ></i></p>
+        <p>4) Check for notifications.</p>
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      </div>
+      
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      <div class="footer">
+        <a style="float: left;"><i class="fa fa-envelope" aria-hidden="true"></i> Mail us: yourbudgetorganizer@gmail.com</a>
+        <a style="float:right;"><i class="fa fa-phone" aria-hidden="true"></i> Contact us: +91 99999 88888</a>
+      </div>
+      {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+      {% endblock %}
+    </main>
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+ 
+</body>
+</html>

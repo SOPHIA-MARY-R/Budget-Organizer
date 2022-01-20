@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Chart </title>  
+<style>
+    /*charts.css*/
+.header {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    top: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  #shining {
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: cursive, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
+  }
+ #columnchart_material{
+     margin-left: 350px;
+     margin-right: 350px;
+     margin-top: 100px;
+ }
+ body{
+     /*background-color: black;*/
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+  color: white;
+  font-family:"Consolas", serif;
+  font-size: 20px;
+  margin: 0;
+ }
+</style>
+<script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+{% block javascript %}
+    <script>
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Income', 'Expense', 'Saving'],
+          ['Jan', {{janInc|safe}}, {{janExp|safe}}, {{janSav|safe}}], 
+          ['Feb', {{febInc|safe}}, {{febExp|safe}}, {{febSav|safe}}],
+          ['March', {{marInc|safe}}, {{marExp|safe}}, {{marSav|safe}}],
+          ['April', {{aprInc|safe}}, {{aprExp|safe}}, {{aprSav|safe}}],
+          ['May', {{mayInc|safe}}, {{mayExp|safe}}, {{maySav|safe}}],
+          ['June', {{junInc|safe}}, {{junExp|safe}}, {{junSav|safe}}],
+          ['July', {{julInc|safe}}, {{julExp|safe}}, {{julSav|safe}}],
+          ['Aug', {{augInc|safe}}, {{augExp|safe}}, {{augSav|safe}}],
+          ['sept', {{sepInc|safe}}, {{sepExp|safe}}, {{sepSav|safe}}],
+          ['Oct', {{octInc|safe}}, {{octExp|safe}}, {{octSav|safe}}],
+          ['Nov', {{novInc|safe}}, {{novExp|safe}}, {{novSav|safe}}],
+          ['Dec', {{decInc|safe}}, {{decExp|safe}}, {{decSav|safe}}],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Income-Expense Trend Visualization for 2021',
+            subtitle: 'Income, Expense, and Saving',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+{% endblock %}
+</head>
+<body>
+  <div class="header">
+    <p id="shining">Chart <i class="fa fa-bar-chart" aria-hidden="true" fa-2x></i></p>
+  </div>
+
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  
+</body>
+ </html>

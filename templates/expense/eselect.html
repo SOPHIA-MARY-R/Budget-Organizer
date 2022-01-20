@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense List</title>
+    <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.67) 0.1%, rgba(239,249,251,0.63) 90.1% );
+        color: black;
+        font-family:"Consolas", serif;
+        font-size: 17px;
+        margin:0;
+      }
+      
+      .header {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          background: #000;
+          position: sticky;
+          top: 0;
+          overflow: hidden;
+        }
+        
+        #shining {
+          font-weight: 700;
+          text-align: center;
+          font-size: 40px;
+          font-family: cursive, sans-serif;
+          text-transform: uppercase;
+          background: linear-gradient(90deg, #000, #fff, #000);
+          letter-spacing: 5px;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-repeat: no-repeat;
+          background-size: 80%;
+          animation: shine 5s linear infinite;
+          position: relative;
+        }
+        
+        @keyframes shine {
+          0% {
+            background-position-x: -500%;
+          }
+          100% {
+            background-position-x: 500%;
+          }
+        }
+        a:hover{
+            font-weight:bold;
+            border: 1px solid black;
+        }
+        a{
+            text-decoration: none;
+            padding: 14px 16px;
+            margin: 10px;
+            font-weight:normal;
+            color: black;
+            border: none;
+        }
+        table tr:hover{
+            background-color: skyblue;
+        }
+        table, tr, th, td{
+            border-bottom: 1px solid silver;
+            border-collapse: collapse;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            padding: 14px 16px;
+            text-align: center;
+            margin: 45px 100px 45px 300px;
+        }          
+</style>
+<body>
+    {% block content %}
+    <div class="header">
+        <p id="shining">Expense <i class="fa fa-money-bill-wave" aria-hidden="true" fa-3x></i></p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th><i class="fa fa-list" aria-hidden="true" fa-3x></i> Description</th>
+                <th><i class="fa fa-list-alt" aria-hidden="true" fa-3x></i> Category</th>
+                <th>Amount (<i class="fa fa-rupee-sign" aria-hidden="true" fa-2x></i>)</th>
+                <th><i class="fa fa-calendar-alt" aria-hidden="true" fa-3x></i> Date</th>
+                <th>Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for e in Expenselist %}
+            <tr>
+                <td>{{e.description}}</td>
+                <td>{{e.category}}</td>
+                <td>{{e.amount}}</td>
+                <td>{{e.date}}</td>
+                <td>
+                    <a href="/expense/eedit/{{e.id}}"><i class="fa fa-edit" aria-hidden="true" fa-2x></i></a>
+                    <a href="/expense/edelete/{{e.id}}"><i class="fa fa-trash-alt" aria-hidden="true" fa-2x></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'ecreate' %}" style="background-color: skyblue; text-decoration:none;padding: 14px 16px; margin-left: 500px;"><i class="fa fa-plus" aria-hidden="true" fa-3x></i> Add another expense</a> 
+    {% endblock %}
+</body>
+</html>

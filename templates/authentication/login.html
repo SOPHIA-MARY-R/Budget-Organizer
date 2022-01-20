@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  body {
+    background-color:black;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+  }
+  button {
+    background-color: deeppink;
+    color: white;
+    padding: 10px 16px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  } 
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+</style>
+<body style="margin: 100px 300px 200px 500px;">
+  <pre><h2 style="color:yellow; font-weight:bold; font-size:25px">        <i class="fa fa-sign-in" aria-hidden="true" fa-3x></i> SignIn</h2></pre>
+  <br>
+  <main style="border: 2px solid white inline;">
+    {% block content %}
+    
+    <form class="modal-content animate" method="POST" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <pre>                           <button type="submit">Login</button></pre>
+ 
+  <br/>
+  <a href="{% url 'register' %}" style="text-decoration: none; color:red; font-weight: bold;">     Don't have account? sign up</a>
+  </form>
+  {% endblock %}
+</main>
+</body>
+</html>
