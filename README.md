@@ -22,3 +22,6 @@ To get this work in your system:
 ```
 python manage.py runserver
 ```
+
+For better understanding, check out the video:
+[refer here](https://drive.google.com/file/d/1Ywiq9Ri2AEbJUEiz_K7BS9-75wxMpJPr/view?usp=sharing)
