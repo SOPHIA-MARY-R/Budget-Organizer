@@ -91,9 +91,9 @@
     </div>
     <form action="{% url 'create' %}" method="POST" style=" margin: 50px 400px 50px 500px;">
         {% csrf_token %}
-        Source of income <input type="text" name="source"><br>
-        Amount              <input type="number" name="amount"><br>
-        Date of income       <input type="date" name="date"><br>
+        Source of income <input type="text" name="source" required><br>
+        Amount              <input type="number" name="amount" required><br>
+        Date of income       <input type="date" name="date" required><br>
         <input type="submit" value="Submit" style="background-color: skyblue;padding: 14px 16px; font-size:17px; font-family:'Consolas',sans-serif;" ><br>
     </form>
     <a href="{% url 'select' %}" style="background-color: skyblue; text-decoration:none;padding: 14px 16px; margin-left: 500px;"><i class="fa fa-list" aria-hidden="true" fa-3x></i> View income list</a> 
