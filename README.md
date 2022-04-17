@@ -1,7 +1,7 @@
 # Budget-Organizer
 This is a budget organizing website to organize monthly budget effectively.
 
-This is implemented using HTML, CSS, JavaScript(Front End), Django 3.2.8(Back End) and MySQL(Database).
+This is implemented using HTML, CSS, JavaScript(Front End), Django 4.0.2(Back End) and MySQL(Database).
 
 I must thank everyone who boosted me to finish this work successfully!
 
